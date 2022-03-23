@@ -1,26 +1,29 @@
-#include <stdio.h>
-#include "holberton.h"
-
+#include "main.h"
 /**
- * _strcat - Code to update the value of an integer parameter
- * @dest: String value for the argument of the function
- * @src: String value for the argument of the function
- * Return: void
+ * _strcat - concatenate two strings
+ * @dest: destination
+ * @src: source
+ * Return: pointer to the resulting string dest
  */
 char *_strcat(char *dest, char *src)
 {
-int i = 0;
-int j = 0;
+	int i, j, len;
 
-while (dest[i] != '\0')
-{
-i++;
-}
-while (src[j] != '\0')
-{
-dest[i] = src[j];
-j++;
-i++;
-}
-return (dest);
+	i = 0;
+
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	len = i;
+
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[len] = src[j];
+		len++;
+		j++;
+	}
+	dest[len] = '\0';
+	return (dest);
 }
